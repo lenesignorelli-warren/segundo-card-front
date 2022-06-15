@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import FormuLario from '../components/FormuLario.vue'
 import CadAstro from '../components/CadAstro.vue'
+import IniTial from '../views/IniTial.vue'
 
 const routes = [
   {
@@ -26,7 +27,13 @@ const routes = [
     path: '/cadastro',
     name: 'cadastro',
     component: CadAstro
+  },
+  {
+    path: '/initial',
+    name: 'initial',
+    component: IniTial
   }
+
 ]
 
 const router = createRouter({

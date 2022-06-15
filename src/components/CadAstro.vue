@@ -1,6 +1,13 @@
 <template>
+<div class="count">
+    <ul class="progressbar">
+      <li class="active">Passo 1</li>
+      <li>Passo 2</li>
+      <li>Passo 3</li> 
+    </ul>
+</div>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="v.iewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
   
@@ -46,6 +53,21 @@
           <button type="submit">Enviar</button>
       </form>
   </div>
+  <form>
+  <fieldset>
+    <legend>Choose your favorite monster</legend>
+
+    <input type="radio" id="kraken" name="monster">
+    <label for="kraken">Kraken</label><br/>
+
+    <input type="radio" id="sasquatch" name="monster">
+    <label for="sasquatch">Sasquatch</label><br/>
+
+    <input type="radio" id="mothman" name="monster">
+    <label for="mothman">Mothman</label>
+  </fieldset>
+</form>
+
 </template>
 
 <script>
@@ -137,5 +159,62 @@ export default {
 .form-control.error small {
   color: #e74c3c;
   visibility: visible;
+}
+
+.count {
+    width: 100%;
+}
+
+.progressbar {
+    counter-reset: step;
+}
+
+.progressbar li {
+    list-style: none;
+    float: left;
+    width: 33.33%;
+    position: relative;
+    text-align: center;
+}
+
+.progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.progressbar li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+
+.progressbar li:first-child:after {
+    content: none;
+}
+
+.progressbar li.active {
+    color: #e02b57;
+}
+
+.progressbar li.active:before {
+    border-color: #e02b57;
+}
+
+.progressbar li.active + li:after {
+    background-color: #e02b57;
 }
 </style>
