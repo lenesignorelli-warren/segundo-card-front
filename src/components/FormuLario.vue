@@ -34,15 +34,16 @@
     </fieldset>
 
     <fieldset class="email">
-      <legend>Confirme E-mail</legend>
+      <legend>Confirme e-mail</legend>
       <i class="material-icons">&#xe0be;</i>
       <input type="email" id="email" name="email" placeholder="Digite">
       <label for="email"></label>
-    </fieldset><br/>
+    </fieldset>
+    <br>
 
     <fieldset class="cpf">
       <legend>Cpf</legend>
-      <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14">
+      <input type="text" id="cpf" name="cpf" placeholder="somente números" maxlength="14">
       <label for="cpf"></label>
     </fieldset>
 
@@ -50,61 +51,50 @@
       <legend>Celular</legend>
       <input type="tel" id="tel" name="celular" placeholder="(00)00000-0000" maxlength="14">
       <label for="tel"></label>
-    </fieldset>
+    </fieldset><br>
 
-    <!-- <div class="email">
+    <fieldset class="data">
+      <legend>Data de nascimento</legend>
+      <input type="date" id="birthday" name="birthday">
+      <label for="tel"></label>
+    </fieldset><br />
 
-      <label for="birthday">Data de Nascimento</label>
-      <input type="date" id="birthday" /><br /><br />
+    <p><strong>Gostaria de saber mais sobre o mercado financeiro?</strong></p>
+    <p><strong>Receba um resumo diário na palma de sua mão ou na tela do seu computador.</strong></p>
+    <br />
 
-      <p>
-        <strong
-          >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong
-        >
-      </p>
-      <p>
-        <strong
-          >Sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua.</strong
-        >
-      </p>
-      <br />
+    <input type="checkbox" id="email" />
+    <label for="email">E-mail e SMS</label>
+    <br />
+    <br />
+    <input type="checkbox" id="whatsapp" />
+    <label for="whatsapp">Whatsapp</label><br />
+    <br>
 
-      <input type="checkbox" id="email" />
-      <label for="email">E-mail e SMS</label>
-      <br />
-      <br />
-      <input type="checkbox" id="whatsapp" />
-      <label for="whatsapp">Whatsapp</label><br />
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-
-      <button type="submit">Continuar</button> -->
+    <p>Unimos tecnologia e atendimento humano em uma plataforma de investimentos que é completa para você e sua empresa.</p>
+    <button type="submit">Continuar</button> 
   </form>
 </template>
 
 <script>
 export default {
-  name: "FormuLario",
-};
-
-function mascara_cpf() {
-  var cpf = document.getElementById("cpf");
-  if (cpf.value.length == 3 || cpf.value.length == 7) {
-    cpf.value += ".";
-  } else if (cpf.value.length == 11) {
-    cpf.value += "-";
-  }
+  name: "FormuLario"
 }
+
+// function mascaracpf () {
+//   var cpf = document.getElementById("cpf")
+//   if(cpf.value.length == 3 || cpf.value.length == 7) {
+//     cpf.value += "."
+//   } else if (cpf.value.length == 11) {
+//     cpf.value += "-"
+//   }
+// }
 </script>
 
 <style scoped>
 form {
-  border: solid black 1px;
   text-align: left;
-  padding-right: 200px;
+  padding-right: 300px;
 }
 
 h1 {
@@ -114,21 +104,27 @@ h1 {
 legend {
   font-size: 14px;
 }
-
+fieldset.name {
+  width: 650px;
+}
 .name input {
   border: white;
   width: 500px;
   padding: 5px 10px 10px 50px;
 }
 
-fieldset.email {
+fieldset.email, .cpf, .celular, .data {
   width: 250px;
 }
 
-.email input {
+.email input, .cpf input, .celular input, .data input {
   border: white;
   width: 250px; 
   padding: 5px 10px 10px 50px;
+}
+
+.email, .cpf, .celular {
+  display: inline-block;
 }
 
 .material-icons {
@@ -138,30 +134,6 @@ fieldset.email {
   align-items: center;
   margin-left: 5px;
   margin-top: 5px;
-}
-
-.email {
-  display: inline-block;
-}
-
-.cpf input {
-  border: white;
-  width: 250px; 
-  padding: 5px 10px 10px 50px;
-}
-
-fieldset.cpf {
-  width: 250px;
-}
-
-.celular input {
-  border: white;
-  width: 250px; 
-  padding: 5px 10px 10px 50px;
-}
-
-fieldset.celular {
-  width: 250px;
 }
 
 button {

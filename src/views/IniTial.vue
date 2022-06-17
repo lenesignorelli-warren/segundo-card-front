@@ -1,5 +1,4 @@
 <template>
-
   <div class="bar">
     <h3>FORMULÁRIO</h3>
   </div>
@@ -24,10 +23,8 @@ export default {
   data() {
     return {
       Fase1: true
-      
     }
   }
-
 };
 </script>
 
